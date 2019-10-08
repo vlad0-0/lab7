@@ -2,8 +2,7 @@ print("Проверка условия, a - четырехзначное и ег
 a = int(input("Введите а: "))
 while not 999 < a < 10000:
 	a = int(input("Число должно быть четырехзначным. Введите а: "))
-a = list(a)
-if a == reversed(a):
+if (a%10 == a%1000) and (a//10%10 == a//100%10):
 	print("True")
 else:
 	print("False")
