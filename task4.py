@@ -2,8 +2,21 @@ print("Проверка условия, a - трехзначное и его ц�
 a = int(input("Введите а: "))
 while not 99 < a < 1000:
 	a = int(input("Число должно быть трехзначным. Введите а: "))
-a = str(a)
-if (int(a[0]) > int(a[1]) > int(a[2])) or (int(a[0]) < int(a[1]) < int(a[2])):
-	print("True")
+b = a%10
+a = a//10
+if b < a%10:
+	b = a%10
+	a = a//10
+	if b < a % 10:
+		print("True")
+	else:
+		print("False")
+elif b > a%10:
+	b = a%10
+	a = a//10
+	if b > a%10:
+		print("True")
+	else:
+		print("False")
 else:
 	print("False")
